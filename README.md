@@ -44,6 +44,13 @@ mvn clean package
 mvn clean deploy
 ```
 
+### 実行方法
+
+```
+# CUIからmvnコマンドで実行
+ mvn exec:java -Dexec.mainClass="com.example.HelloServiceRunner" -Dexec.args="あなたの名前"
+```
+
 ## CI/CD
 
 ### GitHub Actions
