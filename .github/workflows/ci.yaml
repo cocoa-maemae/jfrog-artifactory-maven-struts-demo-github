@@ -107,4 +107,5 @@ jobs:
         jf rt bp $BUILD_NAME $GITHUB_RUN_NUMBER
 
     - name: Build scan
-      run: jf bs $BUILD_NAME $GITHUB_RUN_NUMBER --fail=false --project=tomokim-verification
+      run: |
+        jf bs $BUILD_NAME $GITHUB_RUN_NUMBER --fail=false --project=tomokim-verification
