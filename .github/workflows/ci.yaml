@@ -1,4 +1,4 @@
-name: tomokim-maven-demo-github
+name: tomokim-maven-struts-demo-github
 
 on:
   push:
@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 env:
-  BUILD_NAME: "tomokim-maven-demo-github"
+  BUILD_NAME: "tomokim-maven-struts-demo-github"
   #VIRTUAL_REPO: "td-backend-maven-dev-virtual"
   VIRTUAL_REPO: "tv-backend-maven-test-virtual"
   #LOCAL_REPO: "td-backend-maven-dev-local"
