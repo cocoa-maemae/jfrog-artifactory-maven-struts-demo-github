@@ -108,4 +108,4 @@ jobs:
 
     - name: Build scan
       run: |
-        jf bs $BUILD_NAME $GITHUB_RUN_NUMBER --fail=false --project=tomokim-verification
+        jf bs $BUILD_NAME $GITHUB_RUN_NUMBER --fail=false --project=tv
