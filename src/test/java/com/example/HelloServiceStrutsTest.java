@@ -14,50 +14,30 @@ public class HelloServiceStrutsTest {
     }
     
     @Test
-    void testExecuteWithName() throws Exception {
-        // Struts 2のプロパティを設定
-        helloService.setName("World");
-        
-        // execute()メソッドを実行
-        String result = helloService.execute();
-        
-        // 結果を検証
-        assertEquals("success", result);
-        assertEquals("Hello, World!", helloService.getMessage());
-        assertNotNull(helloService.getJsonResponse());
-        assertTrue(helloService.getJsonResponse().contains("Hello, World!"));
+    void testGreetWithName() {
+        // 名前ありのテスト
+        String result = helloService.greet("World");
+        assertEquals("Hello, World!", result);
     }
     
     @Test
-    void testExecuteWithBlankName() throws Exception {
+    void testGreetWithBlankName() {
         // 空の名前でテスト
-        helloService.setName("");
-        
-        String result = helloService.execute();
-        
-        assertEquals("success", result);
-        assertEquals("Hello", helloService.getMessage());
-        assertNotNull(helloService.getJsonResponse());
+        String result = helloService.greet("");
+        assertEquals("Hello", result);
     }
     
     @Test
-    void testExecuteWithNullName() throws Exception {
+    void testGreetWithNullName() {
         // nullの名前でテスト
-        helloService.setName(null);
-        
-        String result = helloService.execute();
-        
-        assertEquals("success", result);
-        assertEquals("Hello", helloService.getMessage());
-        assertNotNull(helloService.getJsonResponse());
+        String result = helloService.greet(null);
+        assertEquals("Hello", result);
     }
     
     @Test
-    void testGreetMethod() {
-        // 従来のgreetメソッドをテスト
-        String result = helloService.greet("Struts");
-        
-        assertEquals("success", result);
-        assertEquals("Hello, Struts!", helloService.getMessage());
+    void testGreetWithWhitespaceName() {
+        // 空白のみの名前でテスト
+        String result = helloService.greet("   ");
+        assertEquals("Hello", result);
     }
 }
